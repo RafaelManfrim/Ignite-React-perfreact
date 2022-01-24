@@ -3,7 +3,7 @@ module.exports = () => {
         products: []
     }
 
-    for (let i = 0; i < 1000; i++) {
+    for (let i = 0; i < 3500; i++) {
         data.products.push({
             id: i + 1,
             price: i % 2 == 0 ? ( i / 2 + 1 ) : ( i * 3 - i / 1.5 ),

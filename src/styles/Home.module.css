@@ -24,7 +24,18 @@
   filter: brightness(0.9);
 }
 
-.container div div {
+.container div article {
   padding: 0.25rem 0;
 }
 
+.container article button {
+  margin-left: 1rem;
+  background-color: #dd7c0e;
+  color: #fff;
+  padding: 0.25rem 0.75rem;
+  border: none;
+}
+
+.container article button:hover {
+  filter: brightness(0.9);
+}

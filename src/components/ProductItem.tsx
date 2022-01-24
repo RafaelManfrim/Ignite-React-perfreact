@@ -3,13 +3,15 @@ import { Product } from "../types/Product";
 
 interface ProductItemProps {
     product: Product
+    onAddToWishList: (id: number) => void
 }
 
-function ProductItemComponent({ product }: ProductItemProps) {
+function ProductItemComponent({ product, onAddToWishList }: ProductItemProps) {
     return (
-        <div>
+        <article>
             {product.title} - <strong>{Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL'}).format(product.price)}</strong>
-        </div>
+            <button onClick={() => onAddToWishList(product.id)}>Add to wishlist</button>
+        </article>
     )
 }
 
