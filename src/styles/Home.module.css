@@ -1,0 +1,30 @@
+.container {
+  padding: 1rem 2rem;
+}
+
+.container form {
+  padding: 1rem 0;
+}
+
+.container form input {
+  margin-right: 1rem;
+  padding: 0.5rem 1rem;
+}
+
+.container form button {
+  background-color: #4444ff;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border: none;
+
+  transition: filter .2s ease-in-out;
+}
+
+.container form button:hover {
+  filter: brightness(0.9);
+}
+
+.container div div {
+  padding: 0.25rem 0;
+}
+
