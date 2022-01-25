@@ -3,3 +3,8 @@ export type Product = {
     price: number
     title: string
 }
+
+export type ProductListResults = {
+    data: Product[],
+    totalPrice: number
+}
