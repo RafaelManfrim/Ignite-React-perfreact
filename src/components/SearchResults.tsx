@@ -1,5 +1,6 @@
 import { ProductListResults } from "../types/Product"
 import { ProductItem } from "./ProductItem"
+import { List, ListRowRenderer, AutoSizer } from 'react-virtualized'
 
 interface SearchResultsProps {
     results: ProductListResults
@@ -7,14 +8,18 @@ interface SearchResultsProps {
 }
 
 export function SearchResults({ results, onAddToWishList }: SearchResultsProps) {
+    const rowRenderer: ListRowRenderer = ({ index, key, style }) => {
+        return (
+            <div key={key} style={style}>
+                <ProductItem product={results.data[index]} onAddToWishList={onAddToWishList}/>
+            </div>
+        )
+    }
+
     return (
         <div>
             <h2>Total: {results.totalPrice}</h2>
-            {results.data.map(product => {
-                return (
-                    <ProductItem key={product.id} product={product} onAddToWishList={onAddToWishList}/>
-                )
-            })}
+            <List height={500} rowHeight={30} width={900} overscanRowCount={10} rowCount={results.data.length} rowRenderer={rowRenderer} />
         </div>
     )
 }
@@ -46,3 +51,5 @@ export function SearchResults({ results, onAddToWishList }: SearchResultsProps) 
 
 
 // Boa prática, colocar cálculos no momento da busca
+
+// Listas muito grandes, pensar em usar virtualização
